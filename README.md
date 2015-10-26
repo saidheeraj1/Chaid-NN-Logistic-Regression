@@ -52,6 +52,8 @@ proc print data=cutpoint;
 
 run;
 
+
+
  
 
 
@@ -142,35 +144,5 @@ RoiNN=PrNN/Tcost;
 
 run;
 
-We can get the below graphs which compares three models in terms of ROI and profit.
- 
 
-RoiLR represents ROI for Logistic Regression model
-RoiCH represents ROI for CHAID model
-RoiNN represents ROI for Neural Networks model
 
- 
-
-PrLR represents Profit for Logistic Regression model
-PrCH represents Profit for CHAID model
-PrNN represents Profit for Neural Networks
-
- 
-Comparing the models for profit and ROI:
-Model	Max profit	Max ROI in %
-	Corresponding ROI in %	Corresponding profit
-Logistic Regression	23925	124
-	95	20205
-CHAID	26015	112
-	106	22485
-NN	24465	125
-	102	22815
-
-We have to choose the best model among three. For this we can consider with respective to “Max Profit” or “Max ROI”. Calculations below help us to choose one among them.
-(i)	If Max. Profit is considered, loss with respective to ROI =
-106-125/125 = -0.152 = -15.2%
-(ii)	If Max. ROI is considered, loss with respective to profit =
-22815-26015/26015 = -0.123 = -12.3%
-Considering both, case (ii) is better as it is low compared to case (i). As the loss percentage is less for “Max ROI” method it is better to choose that over “max profit”.
-Hence cut off is made with respective to ROI. 
-The model which optimizes ROI (125%) is Neural Network (NN) model.
